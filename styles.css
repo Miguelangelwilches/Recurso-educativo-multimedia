@@ -1,0 +1,101 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Encabezado */
+header {
+  background: #003366;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Secciones */
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #003366;
+}
+
+.subseccion {
+  margin-top: 15px;
+  padding-left: 10px;
+  border-left: 3px solid #ff9900;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #003366;
+  color: white;
+}
+
+
+/* Imagen dentro de las secciones (Opción 1: ancho fijo) */
+.about-img {
+  width: 500px;      /* tamaño fijo: cámbialo a 150px, 250px, etc. */
+  max-width: 100%;   /* evita que pase del contenedor en pantallas pequeñas */
+  height: auto;      /* conserva proporción */
+  border-radius: 10px;
+  display: block;
+  margin: 10px auto; /* centra la imagen horizontalmente */
+}
+
+/* Contacto en dos columnas */
+.contenido-contacto {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap; /* Para que en celular se acomode */
+}
+
+.info-contacto {
+  flex: 1 1 55%; /* Toma el 55% del ancho */
+}
+
+.imagen-contacto {
+  flex: 1 1 40%; /* Toma el 40% del ancho */
+  text-align: center;
+}
+
+.imagen-contacto img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+}
