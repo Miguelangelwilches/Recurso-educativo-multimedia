@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escuelas Académicas - UNAD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --azul-unad: #004b8d;
+      --naranja-unad: #f7941e;
+      --gris-fondo: #f5f7fa;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: var(--gris-fondo);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--azul-unad), #0066cc);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .escuelas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .escuela {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .escuela:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .escuela img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .escuela-content {
+      padding: 20px;
+    }
+
+    .escuela h2 {
+      color: var(--azul-unad);
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .escuela p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .btn-volver {
+      display: block;
+      width: fit-content;
+      margin: 40px auto;
+      background-color: var(--naranja-unad);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .btn-volver:hover {
+      background-color: #e3820f;
+    }
+
+    footer {
+      background-color: var(--azul-unad);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fa-solid fa-building-columns"></i> Escuelas Académicas UNAD</h1>
+    <p>Conoce las áreas de formación que impulsan tu desarrollo profesional y personal</p>
+  </header>
+
+  <main>
+    <section class="escuelas-grid">
+      
+      <div class="escuela">
+        <img src="assets/img/tecnologia.jpg" alt="Escuela de Ciencias Básicas, Tecnología e Ingeniería">
+        <div class="escuela-content">
+          <h2>Escuela de Ciencias Básicas, Tecnología e Ingeniería</h2>
+          <p>Forma profesionales en áreas como ingeniería de sistemas, electrónica, energía renovable y tecnologías de la información, promoviendo la innovación y el desarrollo sostenible.</p>
+        </div>
+      </div>
+
+      <div class="escuela">
+        <img src="assets/img/sociales y arte.jpg" alt="Escuela de Ciencias Sociales, Artes y Humanidades">
+        <div class="escuela-content">
+          <h2>Escuela de Ciencias Sociales, Artes y Humanidades</h2>
+          <p>Ofrece programas enfocados en comunicación, educación, psicología y arte, con el objetivo de fortalecer el pensamiento crítico y el compromiso social.</p>
+        </div>
+      </div>
+
+      <div class="escuela">
+        <img src="assets/img/economia.jpg" alt="Escuela de Ciencias Administrativas, Contables, Económicas y de Negocios">
+        <div class="escuela-content">
+          <h2>Escuela de Ciencias Administrativas, Contables, Económicas y de Negocios</h2>
+          <p>Prepara líderes empresariales con enfoque ético y global, capaces de crear y gestionar proyectos sostenibles que impulsen el crecimiento económico.</p>
+        </div>
+      </div>
+
+      <div class="escuela">
+        <img src="assets/img/profesor.jpg" alt="Escuela de Ciencias de la Educación">
+        <div class="escuela-content">
+          <h2>Escuela de Ciencias de la Educación</h2>
+          <p>Fomenta la formación de educadores innovadores que aplican tecnologías y metodologías activas para fortalecer el aprendizaje en todos los niveles.</p>
+        </div>
+      </div>
+
+      <div class="escuela">
+        <img src="assets/img/agricultura y ganaderia.jpeg" alt="Escuela de Ciencias Agrarias, Pecuarias y del Medio Ambiente">
+        <div class="escuela-content">
+          <h2>Escuela de Ciencias Agrarias, Pecuarias y del Medio Ambiente</h2>
+          <p>Promueve el desarrollo rural sostenible mediante la investigación, la innovación y la gestión ambiental, enfocándose en la producción responsable y el cuidado del entorno.</p>
+        </div>
+      </div>
+
+      <div class="escuela">
+        <img src="assets/img/salud.jpg" alt="Escuela de Ciencias de la Salud">
+        <div class="escuela-content">
+          <h2>Escuela de Ciencias de la Salud</h2>
+          <p>Forma profesionales comprometidos con la salud integral y el bienestar de la comunidad, con enfoque en la promoción y prevención sanitaria.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <a href="index.html" class="btn-volver"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Universidad Nacional Abierta y a Distancia - UNAD</p>
+  </footer>
+  <script>
+    // Detectar la página actual
+    const currentPage = window.location.pathname.split("/").pop();
+
+    // Buscar todos los enlaces del menú
+    const menuLinks = document.querySelectorAll("nav ul li a");
+
+    menuLinks.forEach(link => {
+      const linkPage = link.getAttribute("href");
+
+      // Si el href coincide con la página actual → resaltar
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>

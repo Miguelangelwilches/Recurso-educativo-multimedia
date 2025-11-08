@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNAD - Servicios Institucionales</title>
+ <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <!-- Menú de navegación -->
+  <header>
+    <h1>Bienvenido a la UNAD</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="escuelas.html">Escuelas</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="plataformas.html">Plataformas</a></li>
+        <li><a href="sedesunad.html">Sedes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="inscripciones.html">Inscripciones</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Imagen destacada -->
+  <section class="hero">
+    <img src="assets/img/unad-banner.png" alt="Imagen de la UNAD" class="hero-img">
+    <div class="hero-text">
+      <h1>Universidad Nacional Abierta y a Distancia</h1>
+      <p>Educación sin límites, compromiso con el país.</p>
+    </div>
+  </section>
+
+  <!-- Historia, Misión, Visión, Origen y Evolución -->
+<section class="about">
+  <h2>Nuestra Historia</h2>
+  <div class="about-container">
+    <img src="assets/img/historia.jpg" alt="Historia de la UNAD" class="about-img">
+    <p>
+      La Universidad Nacional Abierta y a Distancia (UNAD) fue fundada con el propósito de ofrecer educación superior accesible a todos los colombianos,
+      bajo un modelo innovador de enseñanza abierta y virtual. Desde sus inicios, la institución ha trabajado por democratizar el acceso a la educación
+      de calidad, fomentando el desarrollo social, económico y cultural de las regiones del país.
+      <br><br>
+      Fundada en 1981 como **UNISUR** (Unidad Universitaria del Sur de Bogotá), la universidad se consolidó como una entidad pública adscrita al
+      Ministerio de Educación Nacional mediante la Ley 52 de 1981. Posteriormente, fue transformada por el Congreso de la República en la
+      **Universidad Nacional Abierta y a Distancia**, ampliando su cobertura y fortaleciendo su compromiso con la formación integral de los ciudadanos.
+    </p>
+  </div>
+
+  <div class="about-details">
+    <h3>🎯 Misión</h3>
+    <p>
+      La UNAD tiene como misión contribuir a la educación inclusiva, equitativa y de calidad mediante un modelo pedagógico centrado en el aprendizaje autónomo,
+      flexible y mediado por tecnologías de la información. Su propósito es formar ciudadanos éticos, críticos y comprometidos con el desarrollo sostenible
+      y la transformación social de Colombia.
+    </p>
+
+    <h3>🌎 Visión</h3>
+    <p>
+      Ser reconocida como una de las principales universidades virtuales de América Latina, líder en innovación educativa y en el uso de tecnologías digitales
+      aplicadas al aprendizaje, la investigación y la proyección social, contribuyendo al progreso y bienestar de las comunidades.
+    </p>
+
+    <h3>🏛️ Origen</h3>
+    <p>
+      El origen de la UNAD se remonta a la necesidad de ofrecer oportunidades de educación superior a personas que, por razones geográficas, laborales o económicas,
+      no podían acceder a la educación presencial tradicional. Con el respaldo del Estado colombiano, la universidad se consolidó como pionera en la modalidad abierta
+      y a distancia, siendo ejemplo de inclusión educativa en el país.
+    </p>
+
+    <h3>📚 Evolución</h3>
+    <p>
+      A lo largo de su historia, la UNAD ha evolucionado significativamente, pasando de ofrecer programas por correspondencia a convertirse en una institución
+      completamente digital. Hoy cuenta con una robusta infraestructura tecnológica, plataformas virtuales de aprendizaje, centros regionales en todo el país
+      y una amplia oferta de programas de pregrado y posgrado. Esta evolución refleja su compromiso constante con la calidad, la innovación y la formación de
+      profesionales competentes para el mundo globalizado.
+    </p>
+  </div>
+</section>
+  <!-- Servicios Institucionales -->
+  <main>
+    <section>
+      <h2>Servicios Institucionales</h2>
+      <p>
+        Aquí encontrarás información sobre los principales servicios que ofrece la UNAD.
+      </p>
+      <div class="service">
+        <h3>📌 Admisiones</h3>
+        <p>Proceso de inscripción y matrícula para nuevos estudiantes.</p>
+      </div>
+      <div class="service">
+        <h3>📌 Bienestar Universitario</h3>
+        <p>Actividades y programas para el desarrollo integral del estudiante.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Universidad Nacional Abierta y a Distancia - UNAD</p>
+  </footer>
+  <script>
+    // Detectar la página actual
+    const currentPage = window.location.pathname.split("/").pop();
+
+    // Buscar todos los enlaces del menú
+    const menuLinks = document.querySelectorAll("nav ul li a");
+
+    menuLinks.forEach(link => {
+      const linkPage = link.getAttribute("href");
+
+      // Si el href coincide con la página actual → resaltar
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

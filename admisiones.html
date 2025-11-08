@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Admisiones - UNAD</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      background-color: #f4f6fa;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ENCABEZADO */
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    header img {
+      height: 60px;
+      vertical-align: middle;
+    }
+
+    header h1 {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 22px;
+      vertical-align: middle;
+    }
+
+    /* CONTENIDO PRINCIPAL */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #003366;
+      border-bottom: 3px solid #FFA500;
+      padding-bottom: 8px;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    /* IMAGEN Y VIDEO */
+    .media-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .media-container img {
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    .media-container video {
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    /* BOTÓN DE REGRESO */
+    .btn-volver {
+      display: inline-block;
+      margin-top: 25px;
+      background-color: #FFA500;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    /* PIE DE PÁGINA */
+    footer {
+      text-align: center;
+      background-color: #003366;
+      color: white;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <img src="assets/img/unad-banner.png" alt="Logo UNAD">
+    <h1>Portal de Admisiones</h1>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+    <h2>Requisitos para programas de pregrado</h2>
+
+    <!-- Sección de imagen y video -->
+    <div class="media-container">
+      <img src="assets/img/procesoadmisiones.jpg" alt="Proceso de Admisiones">
+      <video controls>
+        <source src="assets/videos/Conoce la  UNAD - Universidad Nacional Abierta y A Distancia..mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </div>
+
+    <h3>Requisitos para la inscripción</h3>
+    <ul>
+      <li>Ser bachiller.</li>
+      <li>Haber presentado el examen de estado (ICFES).</li>
+      <li>Diligenciar el formulario de inscripción.</li>
+    </ul>
+
+    <h3>Requisitos para legalizar la matrícula</h3>
+    <ul>
+      <li>Generar Acta de Matrícula.</li>
+      <li>Fotocopia autenticada del diploma de bachiller o presentar original y copia.</li>
+      <li>Fotocopia autenticada del Acta de grado de bachiller.</li>
+      <li>Una fotografía tamaño 3x4.</li>
+      <li>Certificado de examen de estado ICFES.</li>
+      <li>Copia del documento de identidad.</li>
+      <li>Cancelar los derechos pecuniarios correspondientes.</li>
+    </ul>
+
+    <a href="servicios.html" class="btn-volver">Volver a Servicios</a>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>&copy; 2025 Universidad Nacional Abierta y a Distancia - UNAD</p>
+  </footer>
+
+</body>
+</html>

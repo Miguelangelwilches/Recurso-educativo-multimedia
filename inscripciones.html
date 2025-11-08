@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proceso de Inscripción - UNAD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --azul-unad: #004b8d;
+      --naranja-unad: #f7941e;
+      --gris-fondo: #f0f4f8;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: var(--gris-fondo);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--azul-unad), #0066cc);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .progress-container {
+      width: 100%;
+      background-color: #e8f1fb;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .progress-bar {
+      height: 15px;
+      background-color: var(--naranja-unad);
+      width: 25%;
+      transition: width 0.4s ease-in-out;
+    }
+
+    .form-step {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .form-step.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    label {
+      font-weight: bold;
+      color: var(--azul-unad);
+      margin-top: 10px;
+      display: block;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: var(--azul-unad);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0066cc;
+    }
+
+    .btn-secundario {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    .btn-secundario:hover {
+      background-color: #aaa;
+    }
+
+    .file-input {
+      border: 1px dashed #ccc;
+      padding: 15px;
+      background: #fafafa;
+    }
+
+    footer {
+      background-color: var(--azul-unad);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    .confirmacion {
+      text-align: center;
+      padding: 30px;
+      display: none;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .confirmacion i {
+      color: var(--naranja-unad);
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    .materias {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fa-solid fa-graduation-cap"></i> Proceso de Inscripción - UNAD</h1>
+    <p>Universidad Nacional Abierta y a Distancia</p>
+  </header>
+
+  <main class="content">
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <form id="formularioInscripcion" action="https://formspree.io/f/xvgwrqnw" method="POST" enctype="multipart/form-data">
+      
+      <!-- Paso 1 -->
+      <div class="form-step active">
+        <h2>🧍 Datos personales</h2>
+        <label>Nombre completo:</label>
+        <input type="text" name="nombre" required>
+
+        <label>Correo electrónico:</label>
+        <input type="email" name="email" required>
+
+        <label>Número de documento:</label>
+        <input type="text" name="documento" required>
+
+        <button type="button" onclick="nextStep()">Siguiente</button>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="form-step">
+        <h2>🎓 Información académica</h2>
+        <label>Programa de interés:</label>
+        <select name="programa" id="programa" required onchange="mostrarOpcionesSemestre()">
+          <option value="">Seleccione una opción</option>
+          <option value="psicologia">Psicología</option>
+          <option value="ingenieria">Ingeniería</option>
+          <option value="administracion">Administración</option>
+          <option value="derecho">Derecho</option>
+        </select>
+
+        <div id="opcionesSemestre" style="display:none;">
+          <label>Semestre:</label>
+          <select id="semestre" onchange="mostrarMaterias()">
+            <option value="">Seleccione un semestre</option>
+            <option value="1">1° Semestre</option>
+            <option value="2">2° Semestre</option>
+            <option value="3">3° Semestre</option>
+          </select>
+
+          <div id="materias" class="materias"></div>
+        </div>
+
+        <label>Mensaje adicional:</label>
+        <textarea name="mensaje" placeholder="Escribe algún comentario..."></textarea>
+
+        <button type="button" class="btn-secundario" onclick="prevStep()">Anterior</button>
+        <button type="button" onclick="nextStep()">Siguiente</button>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="form-step">
+        <h2>📎 Documentos requeridos</h2>
+        <label>Fotocopia de cédula:</label>
+        <input type="file" name="cedula" accept=".jpg,.png,.pdf" class="file-input" required>
+
+        <label>Resultados del ICFES:</label>
+        <input type="file" name="icfes" accept=".jpg,.png,.pdf" class="file-input" required>
+
+        <label>Recibo de pago:</label>
+        <input type="file" name="recibo" accept=".jpg,.png,.pdf" class="file-input" required>
+
+        <button type="button" class="btn-secundario" onclick="prevStep()">Anterior</button>
+        <button type="button" onclick="nextStep()">Siguiente</button>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="form-step">
+        <h2>✅ Confirmar envío</h2>
+        <p>Revisa que toda la información sea correcta antes de enviar.</p>
+        <button type="button" class="btn-secundario" onclick="prevStep()">Anterior</button>
+        <button type="submit">Enviar inscripción</button>
+      </div>
+    </form>
+
+    <div class="confirmacion" id="confirmacion">
+      <i class="fa-solid fa-circle-check"></i>
+      <h2>¡Tu inscripción ha sido enviada con éxito!</h2>
+      <p>En breve recibirás un correo de confirmación con tu número de estudiante.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Universidad Nacional Abierta y a Distancia - UNAD</p>
+  </footer>
+
+  <script>
+    const steps = document.querySelectorAll('.form-step');
+    const progressBar = document.getElementById('progressBar');
+    const form = document.getElementById('formularioInscripcion');
+    const confirmacion = document.getElementById('confirmacion');
+    let currentStep = 0;
+
+    const materiasPorCarrera = {
+      psicologia: {
+        1: ["Generalidades de la Psicologia", "Catedra Unadista", "Herramientas Digitales para la gestion del conocimeinto", "Competencias comunicativas","Etica y Ciudadania","Electiva campo de formacion complemetaria"],
+        2: ["Antecednetes de la Psicologia", "Psicologia y cursos de vida", "Historia critica de la Colombia contemporanea", "Estadística IEnfoques Clásicos de la Psicología","Fundamentos y Generalidades de Investigación","Pensamiento Lógico Matemático","Electiva Campo de Formación Complementaria","Electiva Campo de Formación Complementaria","Prestación servicio social unadista"],
+        3: ["Fundamentos de Psicobiología", "Aplicación de Psicobiología", "Orígenes de la Psicología Social Política y Comunitaria", "Enfoques Contemporáneos de la Psicología","Psicología de la Personalidad","Estadística","Procesos Psicológicos",]
+      },
+      ingenieria: {
+        1: ["Matemáticas I", "Programación Básica", "Física I", "Comunicación Oral y Escrita"],
+        2: ["Matemáticas II", "Algoritmos", "Física II", "Estructuras de Datos"],
+        3: ["Bases de Datos", "Programación Orientada a Objetos", "Redes de Computadores", "Electrónica Digital"]
+      },
+      administracion: {
+        1: ["Catedrá Unadista", "Fundamentos de Administración", "Herramientas Digitales para la Gestión del Conocimiento", "Pensamiento Lógico y Matemático","Competencias Comunicativas","Inglés A1"],
+        2: ["Ética y Ciudadanía", "Pensamiento Administrativo", "Fundamentos de Economía", "Contabilidad Financiera Básica","Inglés A2"],
+        3: ["Gestión del Talento Humano", "Innovación de la Administración Posmoderna", "Microeconomía", "Estadística y Probalidad","Gerencia Estratégica de Costos y Presupuestos","Inglés B1"]
+      },
+      derecho: {
+        1: ["Introducción al Derecho", "Historia de las Ideas Políticas", "Sujetos de Derecho", "Catedrá Unadista","Fundamentos en Gestión Integral","Herramientas digitales para la Gestión del Conocimiento"],
+        2: ["Sociología Jurídica", "Derecho Constitucional General", "Derechos Humanos", "Pensamiento Lógico y Matemático","Fundamentos y Generalidades de Investigación","Fundamentos y Generalidades de Investigación"],
+        3: ["Filosofía del Derecho", "Derecho Constitucional Colombiano I", "Derechos Patrimoniales", "Derecho Sustantivo Laboral","Obligaciones Jurídicas","Electivo Interdisciplinar Básico Comun I","Formación complementaria"]
+      }
+    };
+
+    function mostrarOpcionesSemestre() {
+      const programa = document.getElementById("programa").value;
+      const opcionesSemestre = document.getElementById("opcionesSemestre");
+      const materiasDiv = document.getElementById("materias");
+      materiasDiv.innerHTML = "";
+      if (programa) {
+        opcionesSemestre.style.display = "block";
+      } else {
+        opcionesSemestre.style.display = "none";
+      }
+    }
+
+    function mostrarMaterias() {
+      const programa = document.getElementById("programa").value;
+      const semestre = document.getElementById("semestre").value;
+      const materiasDiv = document.getElementById("materias");
+      materiasDiv.innerHTML = "";
+
+      if (materiasPorCarrera[programa] && materiasPorCarrera[programa][semestre]) {
+        materiasDiv.innerHTML = `<h4>Materias del ${semestre}° semestre:</h4><ul>${materiasPorCarrera[programa][semestre].map(m => `<li>${m}</li>`).join('')}</ul>`;
+      }
+    }
+
+    function showStep(index) {
+      steps.forEach((step, i) => step.classList.toggle('active', i === index));
+      progressBar.style.width = ((index + 1) / steps.length) * 100 + '%';
+    }
+
+    function nextStep() {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.style.display = 'none';
+      confirmacion.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>

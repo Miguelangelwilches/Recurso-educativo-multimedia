@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apoyo Estudiantil</title>
+  <style>
+    /* ===== ESTILOS GENERALES ===== */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+    }
+
+    /* ===== BANNER SUPERIOR ===== */
+    .banner-apoyo {
+      background-image: url('assets/img/banner-apoyo.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .banner-apoyo::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 80, 0.5);
+      z-index: 1;
+    }
+
+    .banner-apoyo h1, .banner-apoyo p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .banner-apoyo h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .banner-apoyo p {
+      font-size: 18px;
+    }
+
+    /* ===== CONTENEDOR PRINCIPAL ===== */
+    .contenedor-apoyo {
+      width: 90%;
+      max-width: 1100px;
+      margin: 50px auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 40px;
+    }
+
+    .contenedor-apoyo h2 {
+      color: #004080;
+      border-bottom: 3px solid #f4a300;
+      display: inline-block;
+      margin-bottom: 40px;
+      font-size: 26px;
+    }
+
+    /* ===== SECCIONES ===== */
+    .servicio {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .servicio img {
+      width: 420px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .servicio img:hover {
+      transform: scale(1.03);
+    }
+
+    .servicio div {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .servicio h3 {
+      color: #004080;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .servicio p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* ===== ALTERNAR POSICIÓN ===== */
+    .servicio:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+      /* ===== BOTÓN VOLVER ===== */
+    .volver-servicios {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn-volver {
+      display: inline-block;
+      background-color: #ffa500; /* Naranja */
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-volver:hover {
+      background-color: #e69500; /* Naranja más oscuro */
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .servicio {
+        flex-direction: column;
+      }
+
+      .servicio:nth-child(even) {
+        flex-direction: column;
+      }
+
+      .servicio img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== BANNER ===== -->
+  <div class="banner-apoyo">
+    <h1>Apoyo Estudiantil</h1>
+    <p>Fortaleciendo tu bienestar académico y personal.</p>
+  </div>
+
+  <!-- ===== CONTENEDOR PRINCIPAL ===== -->
+  <div class="contenedor-apoyo">
+    <h2>Servicios Disponibles</h2>
+
+    <div class="servicio">
+      <img src="assets/img/tutoria.jpg" alt="Tutorías Académicas">
+      <div>
+        <h3>Tutorías Académicas</h3>
+        <p>Ofrecemos acompañamiento personalizado para fortalecer tus conocimientos en distintas asignaturas, ayudándote a mejorar tu rendimiento académico y confianza.</p>
+      </div>
+    </div>
+
+    <div class="servicio">
+      <img src="assets/img/psicologia.jpg" alt="Apoyo Psicológico">
+      <div>
+        <h3>Apoyo Psicológico</h3>
+        <p>Brindamos atención profesional para promover tu bienestar emocional, manejo del estrés y equilibrio entre tu vida personal y académica.</p>
+      </div>
+    </div>
+
+    <div class="servicio">
+      <img src="assets/img/vocacional.jpg" alt="Consejería Vocacional">
+      <div>
+        <h3>Consejería Vocacional</h3>
+        <p>Te orientamos en la toma de decisiones sobre tu futuro académico y profesional, ayudándote a descubrir tus fortalezas e intereses.</p>
+      </div>
+    </div>
+
+    <div class="servicio">
+      <img src="assets/img/asistencia.jpg" alt="Asistencia Económica">
+      <div>
+        <h3>Asistencia Económica</h3>
+        <p>Encuentra información sobre becas, subsidios y apoyos financieros disponibles para estudiantes de distintas modalidades y regiones.</p>
+      </div>
+    </div>
+
+    <div class="servicio">
+      <img src="assets/img/baloncesto.jpg" alt="Actividades Deportivas">
+      <div>
+        <h3>Actividades Deportivas y Culturales</h3>
+        <p>Participa en programas de bienestar físico y espacios culturales que fomentan el trabajo en equipo, la creatividad y el desarrollo integral.</p>
+      </div>
+    </div>
+     <!-- ===== BOTÓN VOLVER ===== -->
+    <div class="volver-servicios">
+      <a href="servicios.html" class="btn-volver">Volver a Servicios</a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataformas - UNAD</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ===== Estilos específicos de plataformas ===== */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+  background: linear-gradient(90deg, #002b5c, #004b8d); /* degradado azul profesional */
+  color: #ffffff; /* texto blanco */
+  padding: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgb(248, 242, 242); /* efecto relieve para que destaque más */
+}
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #003366;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #004b8d;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 40px;
+    }
+
+    .plataformas-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .plataforma {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .plataforma.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease-out;
+    }
+
+    .plataforma:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .plataforma img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 3px solid #004b8d;
+    }
+
+    .plataforma h3 {
+      margin: 15px 0 10px;
+      color: #004b8d;
+    }
+
+    .plataforma p {
+      font-size: 0.95em;
+      padding: 0 15px;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Universidad Nacional Abierta y a Distancia</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="escuelas.html">Escuelas</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="plataformas.html" class="active">Plataformas</a></li>
+        <li><a href="sedesunad.html">Sedes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Plataformas Virtuales de la UNAD</h2>
+    <p>La UNAD cuenta con diferentes plataformas tecnológicas que facilitan el aprendizaje virtual, la gestión académica y la comunicación entre la comunidad educativa.</p>
+
+    <div class="plataformas-container">
+
+      <div class="plataforma">
+        <img src="assets/img/campusvirtual.jpg" alt="Campus Virtual UNAD">
+        <h3>Campus Virtual</h3>
+        <p>Es el espacio principal donde los estudiantes acceden a sus cursos, contenidos, foros y actividades académicas. Es el corazón de la educación virtual en la UNAD.</p>
+      </div>
+
+      <div class="plataforma">
+        <img src="assets/img/sigan.jpg" alt="SIGAN UNAD">
+        <h3>SIGAN</h3>
+        <p>El Sistema de Gestión Académica UNAD permite realizar trámites como matrícula, consulta de notas, certificaciones y control de procesos administrativos.</p>
+      </div>
+
+      <div class="plataforma">
+        <img src="assets/img/correoEstudiantes.jpg" alt="Correo UNAD">
+        <h3>Correo Institucional</h3>
+        <p>La herramienta oficial de comunicación entre estudiantes, tutores y administrativos. Se utiliza para notificaciones, reuniones y envío de información institucional.</p>
+      </div>
+
+      <div class="plataforma">
+        <img src="assets/img/webex-vs-zoom.jpg" alt="Zoom y Webex UNAD">
+        <h3>Zoom y Webex</h3>
+        <p>Plataformas de videoconferencia utilizadas para encuentros sincrónicos, tutorías en vivo y eventos académicos en tiempo real.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Universidad Nacional Abierta y a Distancia - UNAD</p>
+  </footer>
+
+  <script>
+    // Animación al hacer scroll
+    const elementos = document.querySelectorAll('.plataforma');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elementos.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

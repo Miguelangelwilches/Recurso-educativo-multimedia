@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - UNAD</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<script>
+  // Detectar el nombre del archivo actual
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Seleccionar todos los enlaces del menú
+  const navLinks = document.querySelectorAll("nav ul li a");
+
+  // Comparar cada enlace con la página actual
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+<body>
+
+  <header>
+    <h1>Universidad Nacional Abierta y a Distancia</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="escuelas.html">Escuelas</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="plataformas.html">Plataformas</a></li>
+        <li><a href="sedesunad.html">Sedes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Contáctanos</h2>
+      <p>La UNAD cuenta con diferentes medios de contacto para atender a sus estudiantes y comunidad académica.</p>
+
+      <!-- Contenedor principal -->
+      <div class="contenido-contacto">
+
+        <!-- Columna izquierda -->
+        <div class="info-contacto">
+          <div class="subseccion">
+            <h3>📞 Información de contacto</h3>
+            <p><strong>Teléfono Nacional:</strong> 01 8000 115223</p>
+            <p><strong>PBX Bogotá:</strong> (601) 375 9500</p>
+            <p><strong>Correo:</strong> atencionalusuario@unad.edu.co</p>
+            <p><strong>Dirección Sede Nacional:</strong> Calle 14 Sur No. 14-23, Bogotá D.C., Colombia</p>
+          </div>
+
+          <div class="subseccion">
+            <h3>🕒 Horarios de Atención</h3>
+            <p><strong>Lunes a Viernes:</strong> 8:00 a.m. - 6:00 p.m.</p>
+            <p><strong>Sábados:</strong> 8:00 a.m. - 1:00 p.m.</p>
+            <p><strong>Domingos y Festivos:</strong> Cerrado</p>
+          </div>
+
+          <div class="subseccion redes-sociales">
+            <h3>🌐 Síguenos en nuestras redes</h3>
+            <p>Conéctate con la UNAD en nuestras plataformas digitales:</p>
+            <div class="iconos-redes">
+              <a href="https://www.facebook.com/UniversidadUNAD/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+              <a href="https://twitter.com/UniversidadUNAD" target="_blank"><i class="fab fa-x-twitter fa-2x"></i></a>
+              <a href="https://www.instagram.com/universidadunad/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+              <a href="https://www.youtube.com/universidadunad" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+              <a href="https://www.linkedin.com/school/universidadunad/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <form>
+            <h3>📬 Envíanos un mensaje</h3>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
+
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+
+        <!-- Columna derecha: imagen -->
+        <div class="imagen-contacto">
+          <img src="assets/img/recepcionista.jpg" alt="UNAD Contacto">
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Universidad Nacional Abierta y a Distancia - UNAD</p>
+  </footer>
+
+  <style>
+    /* Ajustes adicionales para la sección de contacto */
+    .contenido-contacto {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .info-contacto {
+      flex: 1 1 55%;
+      background: #f9f9f9;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .imagen-contacto {
+      flex: 1 1 35%;
+    }
+
+    .imagen-contacto img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .subseccion {
+      margin-bottom: 25px;
+    }
+
+    .redes-sociales .iconos-redes a {
+      margin-right: 15px;
+      color: #004b8d;
+      transition: color 0.3s;
+    }
+
+    .redes-sociales .iconos-redes a:hover {
+      color: #f7941e;
+    }
+
+    form h3 {
+      margin-bottom: 10px;
+      color: #004b8d;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #004b8d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #f7941e;
+    }
+  </style>
+  
+
+</body>
+</html>

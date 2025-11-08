@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sedes UNAD - Biblioteca Virtual</title>
+  <style>
+    /* ======== ESTILOS GENERALES ======== */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #002b5c;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0 0 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 5px 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f4a300;
+    }
+
+    /* ======== SECCIÓN PRINCIPAL ======== */
+    main {
+      width: 90%;
+      max-width: 1200px;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    h2 {
+      color: #002b5c;
+      font-size: 32px;
+      margin-bottom: 20px;
+      border-bottom: 4px solid #f4a300;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    p.intro {
+      font-size: 18px;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto 50px;
+      line-height: 1.6;
+    }
+
+    /* ======== GRID DE SEDES ======== */
+    .sedes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+    }
+
+    .sede {
+      background-color: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+      transform: translateY(40px);
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .sede img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .sede img:hover {
+      transform: scale(1.05);
+    }
+
+    .sede-content {
+      padding: 20px;
+    }
+
+    .sede-content h3 {
+      color: #004080;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .sede-content p {
+      color: #444;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* ======== ANIMACIÓN ======== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ======== PIE DE PÁGINA ======== */
+    footer {
+      background-color: #002b5c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    /* ======== RESPONSIVE ======== */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Universidad Nacional Abierta y a Distancia - UNAD</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="escuelas.html">Escuelas</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="plataformas.html">Plataformas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Sedes UNAD en Colombia</h2>
+    <p class="intro">La Universidad Nacional Abierta y a Distancia cuenta con presencia en todo el territorio nacional, brindando acceso a recursos académicos, bibliotecas virtuales y espacios de aprendizaje. A continuación, conoce algunas de nuestras principales sedes:</p>
+
+    <div class="sedes-grid">
+      <div class="sede" style="animation-delay: 0.1s;">
+        <img src="assets/img/sedebogota.png" alt="Sede Bogotá">
+        <div class="sede-content">
+          <h3>Sede Bogotá</h3>
+          <p>La sede principal, ubicada en la capital del país, ofrece modernos laboratorios, biblioteca digital, espacios colaborativos y servicios académicos para estudiantes de todo el territorio nacional.</p>
+        </div>
+      </div>
+
+      <div class="sede" style="animation-delay: 0.3s;">
+        <img src="assets/img/sedemedellin.jpg" alt="Sede Medellín">
+        <div class="sede-content">
+          <h3>Sede Medellín</h3>
+          <p>Reconocida por su infraestructura tecnológica, la sede Medellín promueve la innovación y la investigación aplicada en áreas de ingeniería y ciencias sociales.</p>
+        </div>
+      </div>
+
+      <div class="sede" style="animation-delay: 0.5s;">
+        <img src="assets/img/sedecali.png" alt="Sede Cali">
+        <div class="sede-content">
+          <h3>Sede Cali</h3>
+          <p>Con un fuerte enfoque en emprendimiento y proyectos ambientales, la sede Cali fomenta la sostenibilidad y el desarrollo social de la región suroccidental.</p>
+        </div>
+      </div>
+
+      <div class="sede" style="animation-delay: 0.7s;">
+        <img src="assets/img/sedebarranquilla.jpg" alt="Sede Barranquilla">
+        <div class="sede-content">
+          <h3>Sede Barranquilla</h3>
+          <p>Un punto clave para la educación en la región Caribe, con recursos digitales, talleres interactivos y programas de extensión cultural y académica.</p>
+        </div>
+      </div>
+
+      <div class="sede" style="animation-delay: 0.9s;">
+        <img src="assets/img/tunja.jpg" alt="Sede Tunja">
+        <div class="sede-content">
+          <h3>Sede Tunja</h3>
+          <p>Centro académico destacado por su compromiso con la educación rural, programas de inclusión y apoyo a comunidades del altiplano cundiboyacense.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Universidad Nacional Abierta y a Distancia - UNAD</p>
+  </footer>
+  <script>
+    // Detectar la página actual
+    const currentPage = window.location.pathname.split("/").pop();
+
+    // Buscar todos los enlaces del menú
+    const menuLinks = document.querySelectorAll("nav ul li a");
+
+    menuLinks.forEach(link => {
+      const linkPage = link.getAttribute("href");
+
+      // Si el href coincide con la página actual → resaltar
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>

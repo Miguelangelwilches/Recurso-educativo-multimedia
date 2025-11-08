@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios - UNAD</title>
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <h1>Servicios Institucionales - UNAD</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="escuelas.html">Escuelas</a></li>
+        <li><a href="servicios.html" class="activo">Servicios</a></li>
+        <li><a href="plataformas.html">Plataformas</a></li>
+        <li><a href="sedesunad.html">Sedes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <section>
+      <h2>Admisiones</h2>
+      <div class="servicio">
+        <img src="assets/img/admisiones.jpg" alt="Proceso de admisiones UNAD" class="servicio-img">
+        <div class="servicio-info">
+          <p>El proceso de admisión permite a los aspirantes inscribirse a los programas académicos de la UNAD. 
+          Puedes hacerlo en línea a través del portal oficial.</p>
+          <a href="admisiones.html" class="btn">Ir al portal de Admisiones</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Bienestar Universitario</h2>
+      <div class="servicio">
+        <img src="assets/img/bienestar.jpg" alt="Bienestar Universitario UNAD" class="servicio-img">
+        <div class="servicio-info">
+          <p>El área de Bienestar Universitario promueve actividades culturales, deportivas y de salud integral. 
+          Encuentra talleres y eventos que apoyan tu desarrollo personal.</p>
+          <a href="bienestar.html" target="_blank" class="btn">Conoce más</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Biblioteca Virtual</h2>
+      <div class="servicio">
+        <img src="assets/img/biblioteca.png" alt="Biblioteca Virtual UNAD" class="servicio-img">
+        <div class="servicio-info">
+          <p>La Biblioteca Virtual te ofrece acceso a bases de datos, libros digitales y revistas académicas. 
+          Ingresa con tu usuario institucional.</p>
+          <a href="bibliotecavirtual.html" target="_blank" class="btn">Acceder a la Biblioteca</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Plataformas Académicas</h2>
+      <div class="servicio">
+        <img src="assets/img/plataformas.jpg" alt="Plataformas Académicas UNAD" class="servicio-img">
+        <div class="servicio-info">
+          <p>Accede a las plataformas donde podrás realizar tus clases virtuales, consultar materiales y comunicarte con tus tutores.</p>
+          <a href="https://campus.unad.edu.co/" target="_blank" class="btn">Ir al Campus Virtual</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Apoyo Estudiantil</h2>
+      <div class="servicio">
+        <img src="assets/img/apoyo.jpg" alt="Apoyo Estudiantil UNAD" class="servicio-img">
+        <div class="servicio-info">
+          <p>Este programa ofrece tutorías personalizadas, consejería psicológica y acompañamiento académico. 
+          Consulta los servicios disponibles en tu zona.</p>
+          <a href="apoyosunad.html" target="_blank" class="btn">Solicitar apoyo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2025 Universidad Nacional Abierta y a Distancia - UNAD</p>
+  </footer>
+  <script>
+    // Detectar la página actual
+    const currentPage = window.location.pathname.split("/").pop();
+
+    // Buscar todos los enlaces del menú
+    const menuLinks = document.querySelectorAll("nav ul li a");
+
+    menuLinks.forEach(link => {
+      const linkPage = link.getAttribute("href");
+
+      // Si el href coincide con la página actual → resaltar
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>
