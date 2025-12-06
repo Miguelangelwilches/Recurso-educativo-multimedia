@@ -523,4 +523,67 @@ nav ul li a.active {
   font-weight: bold;
   border-bottom: 3px solid #ff9800;
   transition: 0.3s;
+  /* ======================= */
+/*    OPTIMIZACIÓN MÓVIL   */
+/* ======================= */
+
+@media (max-width: 600px) {
+
+  header h1 {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 24px;
+    width: 100%;
+  }
+
+  p.intro {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  /* Tarjetas */
+  .sedes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .sede {
+    margin: 0 10px;
+    border-radius: 12px;
+  }
+
+  .sede img {
+    height: 180px;
+  }
+
+  .sede-content {
+    padding: 15px;
+  }
+
+  .sede-content h3 {
+    font-size: 20px;
+  }
+
+  .sede-content p {
+    font-size: 15px;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+
 }
